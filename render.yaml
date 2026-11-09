@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sari-sari-store-tracker
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: OWNER_USERNAME
+        value: AntoniettaVillamor
+      - key: OWNER_PASSWORD
+        sync: false
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
+      - key: DATABASE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE
+        value: "2"
